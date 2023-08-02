@@ -1,0 +1,35 @@
+{
+  "name": "CSO-bootstrap",
+  "version": "0.0.1",
+  "description": "5.2.3 bootstrap version",
+  "main": "app.bootstrap.guideline.js",
+  "scripts": {
+    "start": "webpack serve --mode production",
+    "build": "webpack build --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Stephen Lane",
+  "license": "MIT",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "5.2.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "5.2.3",
+    "clean-css": "^5.3.2",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^7.3.3",
+    "sass": "^1.64.2",
+    "sass-loader": "^13.3.2",
+    "source-map-loader": "^4.0.1",
+    "style-loader": "^3.3.3",
+    "terser": "^5.19.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
