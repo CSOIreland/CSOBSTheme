@@ -30,10 +30,10 @@ module.exports = {
   },
   plugins: [
     new miniCssExtractPlugin({
-      filename: "app.bootstrap.guideline.min.css",
+      filename: "app.bootstrap.guidelines.min.css",
     })],
   output: {
-    filename: 'app.bootstrap.guideline.min.js',
+    filename: 'app.bootstrap.guidelines.min.js',
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
