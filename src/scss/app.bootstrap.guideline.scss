@@ -1,15 +1,25 @@
-
 // Use functional color palette for Branding maintenance
 $primary: #006F74;
-$secondary: #17a2b8;
+$secondary: #128091;
+$tertiary: #35456B;
+$navbar: #004F50;
 $success: #019E79;
-$info: #008FAA;
+$info: #008099;
 $warning: #EBA900;
 $danger: #DC4128;
 $light: #fff;
 $dark: #343a40;
-$navbar: #004F50;
+$neutral: #CDD3D9;
+$default: #f8f9fa;
+$primary-light: #579599;
 
+// Functional Colors for flags
+$official: #DC4128;
+$exceptional: #EBA900;
+$reservation: #DC4128;
+$archive: #343a40;
+$analytical: #EBA900;
+$experimental: #EBA900;
 
 // Do NOT use standard color palette for Branding maintenance
 $blue:#008FAA;
@@ -28,16 +38,18 @@ $gray: #6c757d;
 $gray-dark: #343a40;
 
 
+//overrides
+$navbar-text-hover-color: #cbd3da;
+$navbar-light-hover-color:  $navbar-text-hover-color!important;
+$navbar-light-active-color: $white;
+$navbar-light-color: $white;
+$navbar-light-disabled-color : $navbar-text-hover-color;
+
 // import boostrap scss variables and functions, its important this is placed above any merge operations
 @import '~bootstrap/scss/_functions';
 @import '~bootstrap/scss/_variables';
 
 $cso-custom-theme-colours: (
-  'neutral': #cdd3d9,
-  'default': #f8f9fa,
-  'tertiary': #35456b,
-  'primary-light': #579599,
-  'light-grey-blue': #f8f9fa,
   'blue': $blue,
   'indigo':$indigo,
   'purple':$purple,
@@ -50,7 +62,28 @@ $cso-custom-theme-colours: (
   'black':$black,
   'white':$white,
   'gray':$gray,
-  'gray-dark':$gray-dark
+  'gray-dark':$gray-dark,
+  'primary': $primary,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+  'navbar': $navbar,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+  'neutral': $neutral,
+  'default': $default,
+
+  // Functional Colors for flags
+  'official': $official,
+  'exceptional': $exceptional,
+  'reservation': $reservation,
+  'archive': $archive,
+  'analytical': $analytical,
+  'experimental': $experimental,
+  'primary-light': $primary-light
 );
 
 //* merge the newly created custom theme with bootstraps default
@@ -82,5 +115,83 @@ $enable-smooth-scroll : true; //	true (default) or false	Applies scroll-behavior
 
 @import "~bootstrap/scss/bootstrap";
 
+
 // Website font
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,300italic,400italic,700,700italic);
+
+
+// Other custom styles
+
+/****
+*
+* add background colour and radios to nav links that are active
+*/
+.nav-link.active {
+  background-color: $primary !important;
+  border-radius: 0.25rem;
+}
+
+
+/****
+*
+* CSO Custom card modified SCSS from original BS card
+*
+*/
+
+.cso-card-header {
+  padding-left:0.1rem;
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  color: var(--#{$prefix}-white);
+  background-color: var(--#{$prefix}-white);
+  border-bottom: 1px;
+  padding-top: 1rem;
+  font-size:$h4-font-size;
+  font-weight:normal;
+  &:first-child {
+    @include border-radius(var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius) 0 0);
+  }
+}
+
+
+
+.cso-card {
+  border-radius: 3px;
+  border:none;
+  box-shadow: 0 1px 1px 0 rgb(60 64 67 / 8%), 0 1px 3px 1px rgb(60 64 67 / 16%);
+  border-left: 5px solid var(--bs-warning);
+  padding: 0px 0px;
+  margin-bottom: 1px;
+
+  // scss-docs-start card-css-vars
+  --#{$prefix}card-spacer-y: #{$card-spacer-y};
+  --#{$prefix}card-spacer-x: #{$card-spacer-x};
+  --#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
+  --#{$prefix}card-box-shadow: #{$card-box-shadow};
+  --#{$prefix}card-cap-padding-y: #{$card-cap-padding-y};
+  --#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
+  --#{$prefix}card-cap-bg: #{$card-cap-bg};
+  --#{$prefix}card-cap-color: #{$card-cap-color};
+  --#{$prefix}card-height: #{$card-height};
+  --#{$prefix}card-color: #{$card-color};
+  --#{$prefix}card-bg: #{$card-bg};
+  --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
+  --#{$prefix}card-group-margin: #{$card-group-margin};
+  // scss-docs-end card-css-vars
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+  height: var(--#{$prefix}card-height);
+  word-wrap: break-word;
+  background-color: var(--#{$prefix}card-bg);
+  background-clip: border-box;
+}
+
+.cso-card-body {
+  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+  // as much space as possible, ensuring footers are aligned to the bottom.
+  flex: 1 1 auto;
+  padding: 0.1rem;
+  color: var(--#{$prefix}card-color);
+}
