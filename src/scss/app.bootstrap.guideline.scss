@@ -124,16 +124,6 @@ $enable-smooth-scroll : true; //	true (default) or false	Applies scroll-behavior
 
 /****
 *
-* add background colour and radios to nav links that are active
-*/
-.nav-link.active {
-  background-color: $primary !important;
-  border-radius: 0.25rem;
-}
-
-
-/****
-*
 * CSO Custom card modified SCSS from original BS card
 *
 */
