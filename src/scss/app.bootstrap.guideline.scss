@@ -95,6 +95,7 @@ $font-family-base:            $font-family-sans-serif !default;
 $headings-font-family:        'Roboto Slab', sans-serif;
 
 // Toggle global options
+$enable-dark-mode : false;
 $spacer: 1rem;	//1rem (default), or any value > 0	Specifies the default spacer value to programmatically generate our spacer utilities.
 $enable-rounded: true;	//true (default) or false	Enables predefined border-radius styles on various components.
 $enable-shadows: true;//	true or false (default)	Enables predefined decorative box-shadow styles on various components. Does not affect box-shadows used for focus states.
@@ -151,7 +152,6 @@ $enable-smooth-scroll : true; //	true (default) or false	Applies scroll-behavior
   border-left: 5px solid var(--bs-warning);
   padding: 0px 0px;
   margin-bottom: 1px;
-
   // scss-docs-start card-css-vars
   --#{$prefix}card-spacer-y: #{$card-spacer-y};
   --#{$prefix}card-spacer-x: #{$card-spacer-x};
@@ -167,7 +167,6 @@ $enable-smooth-scroll : true; //	true (default) or false	Applies scroll-behavior
   --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
   --#{$prefix}card-group-margin: #{$card-group-margin};
   // scss-docs-end card-css-vars
-
   position: relative;
   display: flex;
   flex-direction: column;
