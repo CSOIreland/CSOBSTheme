@@ -123,6 +123,20 @@ $enable-smooth-scroll : true; //	true (default) or false	Applies scroll-behavior
 
 // Other custom styles
 
+/*** cso button styling ***/
+
+.btn-reservation, .btn-official, .btn-danger{
+    --bs-btn-color:#fff;
+    --bs-btn-hover-color:#fff;
+    --bs-btn-active-color:#fff;
+    --bs-btn-disabled-color:#fff;
+}
+
+.btn-outline-danger, .btn-outline-reservation, .btn-outline-official{
+    --bs-btn-hover-color:#fff;
+    --bs-btn-active-color:#fff;
+}
+
 /****
 *
 * CSO Custom card modified SCSS from original BS card
