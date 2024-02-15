@@ -75,8 +75,6 @@ $cso-custom-theme-colours: (
   'dark': $dark,
   'neutral': $neutral,
   'default': $default,
-
-  // Functional Colors for flags
   'official': $official,
   'exceptional': $exceptional,
   'reservation': $reservation,
@@ -136,6 +134,7 @@ $enable-smooth-scroll : true; //	true (default) or false	Applies scroll-behavior
     --bs-btn-hover-color:#fff;
     --bs-btn-active-color:#fff;
 }
+
 
 /****
 *

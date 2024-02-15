@@ -4,13 +4,13 @@ const path = require('path')
 const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
-  const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
- devtool: 'source-map',
+  devtool: 'source-map',
   entry: './src/js/app.bootstrap.guideline.js',
-   optimization: {
+  optimization: {
     minimizer: [
       new TerserPlugin({
         extractComments: {
@@ -44,7 +44,7 @@ module.exports = {
     static: path.resolve(__dirname, 'dist'),
     port: 8080,
     hot: true
-  },  
+  },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
@@ -52,14 +52,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-   new miniCssExtractPlugin()  ],
+    new miniCssExtractPlugin()],
   module: {
     rules: [
       {
         test: /\.(scss)$/,
         use: [
           {
-             // Extracts CSS for each JS file that includes CSS
+            // Extracts CSS for each JS file that includes CSS
             loader: miniCssExtractPlugin.loader
           },
           {
