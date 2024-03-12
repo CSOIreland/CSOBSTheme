@@ -16,6 +16,7 @@ $default: #f8f9fa;
 $primary-light: #579599;
 
 // Add functional color palette for CSO guidelines
+// N.B. Used by PxStat
 $official: #DC4128;
 $exceptional: #EBA900;
 $reservation: #DC4128;
@@ -115,3 +116,89 @@ $enable-smooth-scroll : true; //	true (default) or false	Applies scroll-behavior
 
 // Import vanila bootstrap
 @import "../src/scss/bootstrap";
+
+// CSO accessibility enhancements
+.btn-danger {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff;
+    --bs-btn-disabled-color: #fff;
+}
+
+.btn-outline-danger {
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff;
+}
+
+// N.B. Used by PxStat
+.btn-official,
+.btn-reservation {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff;
+    --bs-btn-disabled-color: #fff;
+}
+
+.btn-outline-official,
+.btn-outline-reservation {
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff;
+}
+
+
+// CSO custom card implemenation 
+// N.B. Teams can use it freely (except PxStat)
+.cso-card-header {
+    padding-left: 0.1rem;
+    margin-bottom: 0; // Removes the default margin-bottom of <hN>
+    color: var(--#{$prefix}-white);
+    background-color: var(--#{$prefix}-white);
+    border-bottom: 1px;
+    padding-top: 1rem;
+    font-size: $h4-font-size;
+    font-weight: normal;
+
+    &:first-child {
+        @include border-radius(var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius) 0 0);
+    }
+}
+
+.cso-card {
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 1px 1px 0 rgb(60 64 67 / 8%), 0 1px 3px 1px rgb(60 64 67 / 16%);
+    border-left: 5px solid var(--bs-warning);
+    padding: 0px 0px;
+    margin-bottom: 1px;
+    // scss-docs-start card-css-vars
+    --#{$prefix}card-spacer-y: #{$card-spacer-y};
+    --#{$prefix}card-spacer-x: #{$card-spacer-x};
+    --#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
+    --#{$prefix}card-box-shadow: #{$card-box-shadow};
+    --#{$prefix}card-cap-padding-y: #{$card-cap-padding-y};
+    --#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
+    --#{$prefix}card-cap-bg: #{$card-cap-bg};
+    --#{$prefix}card-cap-color: #{$card-cap-color};
+    --#{$prefix}card-height: #{$card-height};
+    --#{$prefix}card-color: #{$card-color};
+    --#{$prefix}card-bg: #{$card-bg};
+    --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
+    --#{$prefix}card-group-margin: #{$card-group-margin};
+    // scss-docs-end card-css-vars
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+    height: var(--#{$prefix}card-height);
+    word-wrap: break-word;
+    background-color: var(--#{$prefix}card-bg);
+    background-clip: border-box;
+}
+
+.cso-card-body {
+    // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+    // as much space as possible, ensuring footers are aligned to the bottom.
+    flex: 1 1 auto;
+    padding: 0.1rem;
+    color: var(--#{$prefix}card-color);
+}
