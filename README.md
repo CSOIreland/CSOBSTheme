@@ -1,2 +1,2 @@
 # CSOBSTheme
-cso boostrap theme is a themed version of bootstrap framework
+Boostrap theme compiled against the CSO Guidelines
